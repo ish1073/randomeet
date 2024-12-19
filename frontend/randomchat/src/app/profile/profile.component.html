@@ -1,0 +1,5 @@
+<div class="profile-container">
+    <input [(ngModel)]="username" placeholder="Enter your username" />
+    <input type="file" (change)="onAvatarChange($event)" />
+    <button (click)="saveProfile()">Save Profile</button>
+  </div>

@@ -1,0 +1,46 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" routerLink="/">Rando-M-eet</a>
+    </div>
+    <div [ngSwitch]="menutype">
+      <div class="collapse navbar-collapse" id="myNavbar" *ngSwitchCase="'guest'">
+        <ul class="nav navbar-nav">
+          <li class="active"><a routerLink="/">Home</a></li>
+          <li><a routerLink="/chat">Chatting</a></li>
+          <li><a routerLink="/vfeedback">Feedback</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a routerLink="/register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+          <li><a routerLink="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+          <li><a routerLink="/adminlogin"><span class="glyphicon glyphicon-log-in"></span>Admin Login</a></li>
+
+        </ul>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar" *ngSwitchCase="'user'">
+        <ul class="nav navbar-nav">
+          <li class="active"><a routerLink="/">Home</a></li>
+          <li><a routerLink="/chat">Chatting</a></li>
+
+          <li><a routerLink="/feedback">Feedback</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a (click)="logout()"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+        </ul>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar" *ngSwitchCase="'admin'">
+        <ul class="nav navbar-nav">
+          <li class="active"><a routerLink="/">Home</a></li>
+          <li><a routerLink="/chat">Chatting</a></li>
+
+          <li><a routerLink="/vfeedback">View Feedback</a></li>
+          <li><a routerLink="/vregister">View Registers</a></li>
+
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a (click)="alogout()"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>

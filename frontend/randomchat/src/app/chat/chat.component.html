@@ -1,0 +1,23 @@
+<div class="chat-container">
+  <h2>Live Chat</h2>
+
+  <div class="messages">
+    <div *ngFor="let msg of messages" class="message">
+      <strong>{{ msg.user }}:</strong> {{ msg.message }}
+      <small>{{ msg.timestamp }}</small>
+    </div>
+  </div>
+
+  <div class="input-container">
+    <input 
+      [(ngModel)]="newMessage" 
+      placeholder="Type a message..." 
+      (keyup.enter)="sendMessage()">
+    <button (click)="sendMessage()">Send</button>
+  </div>
+
+  <div class="user-container">
+    <label for="username">Username:</label>
+    <input [(ngModel)]="userName" id="username" placeholder="Enter your username" />
+  </div>
+</div>
