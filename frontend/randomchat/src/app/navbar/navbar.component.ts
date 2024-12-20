@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
+import { ChatComponent } from '../chat/chat.component';
+import { ChatService } from '../services/chat.service';
 
 @Component({
   selector: 'app-navbar',
@@ -10,7 +12,7 @@ import { Router, RouterLink } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
   menutype="guest"
-  constructor(private router:Router) {
+  constructor(private router:Router,private cht:ChatService) {
 
   }
   ngOnInit(): void {
@@ -30,6 +32,7 @@ export class NavbarComponent implements OnInit {
     localStorage.removeItem("emailid")
     localStorage.setItem("usertype","guest")
     this.router.navigate(["/"])
+    this.cht.deleteMessage
   }
   alogout(){
     localStorage.setItem("usertype","guest")

@@ -1,1 +1,12 @@
-<p>view-feedback works!</p>
+<div class="container">
+    <h1 class="text-center">Feedbacks</h1>
+    <div class="row" *ngFor="let f of farr">
+        <div class="col-sm-12">
+            <div class="caption">
+                <hr>
+                Posted By:{{f.emailid}}<br>
+                Message:{{f.message}}
+            </div>
+        </div>
+    </div>
+</div>

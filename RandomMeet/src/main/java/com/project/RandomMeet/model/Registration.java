@@ -8,12 +8,12 @@ public class Registration {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int regid;
-	private String username,address,gender,contact,emailid,password;
+	private String username,address,gender,contact,emailid,password,interest;
 	public Registration() {
 		super();
 	}
 	public Registration(String username, String address, String gender, String contact, String emailid,
-			String password) {
+			String password, String interest) {
 		super();
 		this.username = username;
 		this.address = address;
@@ -21,6 +21,7 @@ public class Registration {
 		this.contact = contact;
 		this.emailid = emailid;
 		this.password = password;
+		this.interest=interest;
 	}
 	public int getRegid() {
 		return regid;
@@ -64,9 +65,12 @@ public class Registration {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	@Override
-	public String toString() {
-		return "Registration [regid=" + regid + ", username=" + username + ", address=" + address + ", gender=" + gender
-				+ ", contact=" + contact + ", emailid=" + emailid + ", password=" + password + "]";
+	
+	public String getInterest() {
+		return interest;
 	}
+	public void setInterest(String interest) {
+		this.interest = interest;
+	}
+	
 }

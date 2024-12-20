@@ -6,4 +6,5 @@ export class Registration {
     contact:any
     emailid:any
     password:any
+    interest:any
 }

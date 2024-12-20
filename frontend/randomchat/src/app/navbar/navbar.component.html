@@ -8,7 +8,7 @@
         <ul class="nav navbar-nav">
           <li class="active"><a routerLink="/">Home</a></li>
           <li><a routerLink="/chat">Chatting</a></li>
-          <li><a routerLink="/vfeedback">Feedback</a></li>
+          <li><a routerLink="/vfeedback">View Feedbacks</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li><a routerLink="/register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
@@ -20,7 +20,7 @@
       <div class="collapse navbar-collapse" id="myNavbar" *ngSwitchCase="'user'">
         <ul class="nav navbar-nav">
           <li class="active"><a routerLink="/">Home</a></li>
-          <li><a routerLink="/chat">Chatting</a></li>
+          <li><a routerLink="/profile">Profiles</a></li>
 
           <li><a routerLink="/feedback">Feedback</a></li>
         </ul>
@@ -31,9 +31,9 @@
       <div class="collapse navbar-collapse" id="myNavbar" *ngSwitchCase="'admin'">
         <ul class="nav navbar-nav">
           <li class="active"><a routerLink="/">Home</a></li>
-          <li><a routerLink="/chat">Chatting</a></li>
+          <li><a routerLink="/profile">Profiles</a></li>
 
-          <li><a routerLink="/vfeedback">View Feedback</a></li>
+          <li><a routerLink="/vfeedback">View Feedbacks</a></li>
           <li><a routerLink="/vregister">View Registers</a></li>
 
         </ul>

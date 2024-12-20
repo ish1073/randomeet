@@ -3,28 +3,27 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from '../app.component';
 import { CommonModule } from '@angular/common';
+import { LoginComponent } from '../login/login.component';
+import { RegistrationService } from '../services/registration.service';
 
 @Component({
   selector: 'app-chat',
   imports: [FormsModule,CommonModule],
   templateUrl: './chat.component.html',
-  styleUrl: './chat.component.css'
+  styleUrl: './chat.component.css',
 })
 export class ChatComponent implements OnInit {
-  messages: { user: string; message: string; timestamp: string }[] = [];
-
-  // Binds the input for new messages
+  messages: { user: any; message: string; timestamp: string }[] = [];
   newMessage: string = '';
-  userName: string = 'User';  // Default user name
+  constructor(private rs:RegistrationService) {}
 
-  constructor() {}
+  userName: any
 
   ngOnInit(): void {
-    // Retrieve messages from localStorage
+   
     this.loadMessages();
   }
 
-  // Loads messages from localStorage
   loadMessages(): void {
     const storedMessages = localStorage.getItem('chatMessages');
     if (storedMessages) {
@@ -32,28 +31,24 @@ export class ChatComponent implements OnInit {
     }
   }
 
-  // Saves messages to localStorage
   saveMessages(): void {
     localStorage.setItem('chatMessages', JSON.stringify(this.messages));
   }
 
-  // Adds a new message to the chat
   sendMessage(): void {
     if (this.newMessage.trim()) {
       const message = {
-        user: this.userName,
+        user:  this.rs.loginm,
         message: this.newMessage,
         timestamp: new Date().toLocaleTimeString()
       };
 
       this.messages.push(message);
-      this.saveMessages();  // Save updated messages to localStorage
-      this.newMessage = '';  // Clear the input field
+      this.saveMessages();  
+      this.newMessage = '';  
     }
   }
+  
 
-  // Optionally, allow users to change their username
-  changeUserName(newName: string): void {
-    this.userName = newName;
-  }
+
 }

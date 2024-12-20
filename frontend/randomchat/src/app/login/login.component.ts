@@ -12,7 +12,8 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
   reg:Registration=new Registration()
-
+  logininterest:any
+  loginname:any
   constructor(private regserv:RegistrationService,private router:Router) {  }
 
   submitdata() {
@@ -20,6 +21,9 @@ export class LoginComponent {
       if(data.length>0){
         alert("Login successful")
         localStorage.setItem("emailid",this.reg.emailid)
+        this.logininterest=localStorage.getItem(this.reg.interest)
+        this.regserv.setint(this.logininterest)
+        localStorage.setItem(this.loginname,this.reg.username)
         localStorage.setItem("usertype","user")
         this.router.navigate(["/"])
       }
@@ -28,4 +32,5 @@ export class LoginComponent {
       }
     })
   }
+
 }

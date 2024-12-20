@@ -1,5 +1,24 @@
-<div class="profile-container">
-    <input [(ngModel)]="username" placeholder="Enter your username" />
-    <input type="file" (change)="onAvatarChange($event)" />
-    <button (click)="saveProfile()">Save Profile</button>
-  </div>
+<div class="container">
+  <h1 class="text-center">Profiles with same interests</h1>
+  <table class="table table-bordered">
+      <thead>
+          <tr>
+          <th>Username</th>
+          <th>Gender</th>
+          <th>Email</th>
+          <th>Action</th>
+      </tr>
+      </thead>
+      <tbody *ngIf="rarr.length > 0; else noRecords">
+          <tr *ngFor="let r of rarr">
+              <td>{{r.username}}</td>
+              <td>{{r.gender}}</td>
+              <td>{{r.emailid}}</td>
+             <td><a (click)="chatnow()" class="btn btn-primary">Chat Now</a></td>
+        </tr>
+      </tbody>
+      <ng-template #noRecords>
+        <p>No Records found of same interests</p>
+      </ng-template>
+  </table>
+</div>
