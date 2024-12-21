@@ -8,6 +8,7 @@ import { ViewFeedbackComponent } from './view-feedback/view-feedback.component';
 import { ViewRegisterComponent } from './view-register/view-register.component';
 import { ChatComponent } from './chat/chat.component';
 import { ProfileComponent } from './profile/profile.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 export const routes: Routes = [
     {path:'',component:HomeComponent},
@@ -19,4 +20,5 @@ export const routes: Routes = [
     {path:'vregister',component:ViewRegisterComponent},
     {path:'chat',component:ChatComponent},
     {path:'profile',component:ProfileComponent},
+    {path:'aboutus',component:AboutUsComponent}
 ];

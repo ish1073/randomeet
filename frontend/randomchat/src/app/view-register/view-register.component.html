@@ -1,7 +1,7 @@
 <div class="container">
-    <h1 class="text-center">Registrations</h1>
-    <table class="table table-bordered">
-        <thead>
+    <h1 class="text-center" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Registrations</h1>
+    <table class="table table-hover table-bordered" style="background-color: rgb(127, 127, 112)">
+        <thead style="color: white;">
             <tr>
             <th>Id</th>
             <th>Username</th>
@@ -12,7 +12,7 @@
             <th>Interests</th>
         </tr>
         </thead>
-        <tbody>
+        <tbody style="background-color: rgb(197, 255, 218);">
             <tr *ngFor="let r of rarr">
                 <td>{{r.regid}}</td>
                 <td>{{r.username}}</td>
