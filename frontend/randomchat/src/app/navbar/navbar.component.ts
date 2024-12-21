@@ -32,7 +32,6 @@ export class NavbarComponent implements OnInit {
     localStorage.removeItem("emailid")
     localStorage.setItem("usertype","guest")
     this.router.navigate(["/"])
-    this.cht.deleteMessage
   }
   alogout(){
     localStorage.setItem("usertype","guest")

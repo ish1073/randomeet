@@ -13,4 +13,5 @@ import com.project.RandomMeet.model.Registration;
 public interface RegistrationRepository extends JpaRepository<Registration, Integer> {
 	@Query(value="select * from registration where emailid=:emailid and password=:password",nativeQuery = true)
 	List<Registration> findAllByEmailAndPassword(String emailid,String password);
+	
 }

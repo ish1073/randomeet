@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.project.RandomMeet.model.Registration;
@@ -41,4 +42,5 @@ public class RegistrationController {
 	public List<Registration> login(@PathVariable("emailid")String emailid,@PathVariable("password")String password){
 		return rs.login(emailid, password);
 	}
+	
 }

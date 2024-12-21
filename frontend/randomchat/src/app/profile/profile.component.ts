@@ -14,20 +14,16 @@ import { Router } from '@angular/router';
 })
 export class ProfileComponent implements OnInit {
   rarr:Registration[]=[]
-  filteredRecords:any[]=[]
-  loginint:string=''
-
+  userinterest:any
+  filteruser:any[]=[]
     constructor(private rserv:RegistrationService,private router:Router) {
     
     }
     ngOnInit(){
       this.rserv.getAll().subscribe(data=>{
-        if(data.length>0){
+        if(data.length>0)
           this.rarr=data
-        }
       })
-      this.loginint=this.rserv.getint()
-      this.rarr=this.rserv.getrecords()
     }
 
     chatnow(){

@@ -6,9 +6,8 @@ import { Injectable } from '@angular/core';
 export class ChatService {
 
   constructor() { }
-  deleteMessage(): void {
-    localStorage.removeItem('chatMessages');
-  }
+  
 
+  
   
 }

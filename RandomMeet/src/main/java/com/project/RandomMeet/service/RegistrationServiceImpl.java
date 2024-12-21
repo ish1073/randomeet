@@ -47,4 +47,6 @@ public class RegistrationServiceImpl implements RegistrationService {
 	public List<Registration> login(String emailid, String password) {
 		return regRepo.findAllByEmailAndPassword(emailid, password);
 	}
+
+	
 }

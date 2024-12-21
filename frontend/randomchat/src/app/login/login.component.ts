@@ -17,15 +17,14 @@ export class LoginComponent {
   constructor(private regserv:RegistrationService,private router:Router) {  }
 
   submitdata() {
-    this.regserv.login(this.reg.emailid,this.reg.password).subscribe(data=>{
+    this.regserv.login(this.reg.emailid,this.reg.password).subscribe((data:any)=>{
       if(data.length>0){
         alert("Login successful")
         localStorage.setItem("emailid",this.reg.emailid)
-        this.logininterest=localStorage.getItem(this.reg.interest)
-        this.regserv.setint(this.logininterest)
-        localStorage.setItem(this.loginname,this.reg.username)
+
+        localStorage.setItem("interest",this.reg.interest)
         localStorage.setItem("usertype","user")
-        this.router.navigate(["/"])
+        this.router.navigate(["/profile"])
       }
       else{
       alert("Invalid email or password")

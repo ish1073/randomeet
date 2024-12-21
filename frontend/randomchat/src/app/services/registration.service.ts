@@ -9,7 +9,8 @@ import { LoginComponent } from '../login/login.component';
 })
 export class RegistrationService {
   private loginint:string=''
-  private rg:Registration[]=[]
+  private loginuser:any=null;
+  private rg:Registration=new Registration()
 serverurl="http://localhost:9009/registration"
   constructor(private http:HttpClient) { }
   getAll():Observable<Registration[]> {
@@ -21,17 +22,12 @@ serverurl="http://localhost:9009/registration"
   login(e:any,p:any):Observable<Registration[]> {
     return this.http.get<Registration[]>(this.serverurl+"/login/"+e+"/"+p)
   }
+  sameInterest(i:string,ei:string):Observable<Registration[]>{
+    return this.http.get<Registration[]>(this.serverurl+"/interests",{params:{i,ei}})
+  }
+  setLoginUser(user:Registration){
+    this.loginuser=user
+  }
+ 
 
-  loginm(){
-    return localStorage.setItem('userName','loginname')
-  }
-  getint():string{
-    return this.loginint
-  }
-  setint(item:string){
-    this.loginint=this.loginint
-  }
-  getrecords(): Registration[]{
-    return this.rg.filter(r=>r.interest===this.loginint)
-  }
 }

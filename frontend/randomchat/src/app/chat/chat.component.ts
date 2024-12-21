@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from '../app.component';
@@ -12,16 +12,21 @@ import { RegistrationService } from '../services/registration.service';
   templateUrl: './chat.component.html',
   styleUrl: './chat.component.css',
 })
-export class ChatComponent implements OnInit {
-  messages: { user: any; message: string; timestamp: string }[] = [];
-  newMessage: string = '';
+export class ChatComponent implements OnInit,OnChanges {
+  messages: { user: string; message: string; timestamp: string }[] = []
+  newMessage: string = ''
+  userName:  string = ''
   constructor(private rs:RegistrationService) {}
-
-  userName: any
+  
+  ngOnChanges(changes: SimpleChanges): void {
+    if(changes['triggerRefresh'] && changes['triggerRefresh'].currentValue){
+      this.loadMessages
+    }
+  }
 
   ngOnInit(): void {
-   
-    this.loadMessages();
+   this.loadMessages
+   this.userName=JSON.parse(localStorage.getItem('loginuser')||'{}').username
   }
 
   loadMessages(): void {
@@ -38,7 +43,7 @@ export class ChatComponent implements OnInit {
   sendMessage(): void {
     if (this.newMessage.trim()) {
       const message = {
-        user:  this.rs.loginm,
+        user:  this.userName,
         message: this.newMessage,
         timestamp: new Date().toLocaleTimeString()
       };
@@ -49,6 +54,8 @@ export class ChatComponent implements OnInit {
     }
   }
   
-
+  deleteMessage(): void {
+    localStorage.removeItem('storedMessages');
+  }
 
 }
