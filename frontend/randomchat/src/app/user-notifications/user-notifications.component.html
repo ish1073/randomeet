@@ -1,0 +1,16 @@
+
+<div class="notifications-container" style="height: 650px; margin-top: 45px;color: aliceblue;">
+  <video autoplay muted loop id="background-video">
+    <source src="v10.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+    <h2>Notifications</h2>
+    <ul>
+      <li *ngFor="let notification of notifications" class="notification-item">
+        <strong>{{ notification.title }}</strong>
+        <p>{{ notification.message }}</p>
+        <button (click)="markAsSeen(notification.id)" class="mark-read-btn">Mark as Read</button>
+      </li>
+    </ul>
+  </div>
+  

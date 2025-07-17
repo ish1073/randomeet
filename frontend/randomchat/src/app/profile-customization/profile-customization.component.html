@@ -1,0 +1,31 @@
+<video autoplay muted loop id="background-video">
+  <source src="v23.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+<div class="container" >
+<div class="profile-container" [ngStyle]="{'background-color': profile.themeColor}">
+  <h2 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;margin-bottom: 30px;">🎨 Customize Your Profile</h2>
+
+  <label>Username:</label>
+  <input type="text" [(ngModel)]="profile.username" />
+
+  <label>Bio:</label>
+  <textarea [(ngModel)]="profile.bio"></textarea>
+
+  <label>Theme Color:</label>
+  <input type="color" [(ngModel)]="profile.themeColor" />
+
+  <div class="form-group">
+    <label for="interest">Choose your Interest :</label>
+    <select class="form-control" name="interest" id="interest" [(ngModel)]="profile.interest">
+      <option>Sports</option>
+      <option>Entertainment</option>
+      <option>Food and Drink</option>
+      <option>Games</option>
+      <option>Business</option>
+      <option>Fashion</option>
+    </select>
+  </div>
+  <button (click)="saveProfile()">Save</button>
+</div>
+</div>

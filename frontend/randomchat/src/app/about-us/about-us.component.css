@@ -1,3 +1,23 @@
+#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+  }
+  
+  /* Dark Overlay */
+  #video-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Adjust opacity for effect */
+    z-index: -1;
+  }
 .head2
 {
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -8,9 +28,10 @@
 .contact-container
 {
     width:70%;
-    background-color: rgba(204, 204, 204, 0.8);
+    background-color: rgba(103, 105, 242, 0.8);
     margin:auto auto;
     padding: 50px;
+    border-radius: 20px;
 }
 .address 
 {
@@ -19,6 +40,7 @@
     padding: 20px;
     width:80%;
     margin: auto auto;
+    border-radius: 20px;
 }
 .map
 {
@@ -28,4 +50,5 @@
     width:80%;
     margin: auto auto;
     overflow: scroll;
+    border-radius: 20px;
 }

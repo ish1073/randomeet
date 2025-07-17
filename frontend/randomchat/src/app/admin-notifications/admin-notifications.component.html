@@ -1,0 +1,9 @@
+<div class="admin-container" style="height: 650px; margin-top: 45px;">
+    <h2>Send Notification</h2>
+    <form (submit)="sendNotification()" class="notification-form">
+      <input type="text" placeholder="Title" [(ngModel)]="notification.title" name="title" required class="input-field">
+      <textarea placeholder="Message" [(ngModel)]="notification.message" name="message" required class="input-field"></textarea>
+      <button type="submit" class="send-btn">Send</button>
+    </form>
+  </div>
+  

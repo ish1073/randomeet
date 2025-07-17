@@ -1,0 +1,37 @@
+<video autoplay muted loop id="background-video">
+    <source src="v16.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video><br><br><br>
+<div class="container">
+    <h2>Two Truths and a Lie 🎭</h2>
+
+    <p><strong>Your ID:</strong> {{ playerId }}</p>
+
+    <!-- Submit Section -->
+    <div *ngIf="!hasSubmitted">
+        <h3>Enter Your Truths and a Lie</h3>
+        <input type="text" [(ngModel)]="truths[0]" placeholder="Truth 1" />
+        <input type="text" [(ngModel)]="truths[1]" placeholder="Truth 2" />
+        <input type="text" [(ngModel)]="lie" placeholder="Lie" />
+        <button (click)="submitTruthsAndLie()">Submit</button>
+    </div>
+
+    <!-- Opponent ID Entry -->
+    <div *ngIf="hasSubmitted && !opponentData">
+        <h3>Enter Opponent's ID</h3>
+        <input type="text" [(ngModel)]="opponentId" placeholder="Opponent ID" />
+        <button (click)="loadOpponentData(opponentId)">Load</button>
+    </div>
+
+    <!-- Game Guessing -->
+    <div *ngIf="opponentData">
+        <h3>Guess the Lie</h3>
+        <ul>
+            <li *ngFor="let statement of opponentData.allStatements" (click)="guessLie(statement)">
+                {{ statement }}
+            </li>
+        </ul>
+        <p>{{ resultMessage }}</p>
+        <button (click)="playAgain()">Play Again</button>
+    </div>
+</div><br><br><br><br><br>

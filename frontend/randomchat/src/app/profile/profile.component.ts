@@ -1,10 +1,11 @@
 import { Component, OnInit} from '@angular/core';
-import { Registration } from '../models/registration';
 import { RegistrationService } from '../services/registration.service';
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from '../login/login.component';
 import { ChatService } from '../services/chat.service';
 import { Router } from '@angular/router';
+import { Profile } from '../models/profile';
+import { ProfileService } from '../services/profile.service';
 
 @Component({
   selector: 'app-profile',
@@ -13,10 +14,10 @@ import { Router } from '@angular/router';
   styleUrl: './profile.component.css'
 })
 export class ProfileComponent implements OnInit {
-  rarr:Registration[]=[]
+  rarr:Profile[]=[]
   userinterest:any
   filteruser:any[]=[]
-    constructor(private rserv:RegistrationService,private router:Router) {
+    constructor(private rserv:ProfileService,private router:Router) {
     
     }
     ngOnInit(){
@@ -26,7 +27,7 @@ export class ProfileComponent implements OnInit {
       })
     }
 
-    chatnow(){
-      this.router.navigate(["/chat"])
+    chatnow(user:Profile){
+      this.router.navigate(["/pchat",user.emailid])
     }
 }

@@ -32,7 +32,6 @@ public class RegistrationServiceImpl implements RegistrationService {
 		Optional<Registration> opt=regRepo.findById(i);
 		if(opt.isPresent()) {
 			Registration rold=opt.get();
-			rold.setUsername(r.getUsername());
 			rold.setAddress(r.getAddress());
 			rold.setGender(r.getGender());
 			rold.setContact(r.getContact());

@@ -1,27 +1,26 @@
-<div class="container">
-    <h1 class="text-center" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Registrations</h1>
-    <table class="table table-hover table-bordered" style="background-color: rgb(127, 127, 112)">
-        <thead style="color: white;">
-            <tr>
-            <th>Id</th>
-            <th>Username</th>
-            <th>Address</th>
-            <th>Gender</th>
-            <th>Contact</th>
-            <th>Email</th>
-            <th>Interests</th>
+<div class="user-container" style="height: 1300px; margin-top: 45px;">
+  
+  <h2 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Registered Users</h2>
+  <div class="profile-grid">
+    <table class="user-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Email id</th>
+          <th>Address</th>
+          <th>Gender</th>
+          <th>Contact</th>
         </tr>
-        </thead>
-        <tbody style="background-color: rgb(197, 255, 218);">
-            <tr *ngFor="let r of rarr">
-                <td>{{r.regid}}</td>
-                <td>{{r.username}}</td>
-                <td>{{r.address}}</td>
-                <td>{{r.gender}}</td>
-                <td>{{r.contact}}</td>
-                <td>{{r.emailid}}</td>
-                <td>{{r.interest}}</td>
-            </tr>
-        </tbody>
+      </thead>
+      <tbody>
+        <tr *ngFor="let r of rarr" class="reg-card">
+          <td>{{r.regid}}</td>
+          <td>{{r.emailid}}</td>
+          <td>{{r.address}}</td>
+          <td>{{r.gender}}</td>
+          <td>{{r.contact}}</td>
+        </tr>
+      </tbody>
     </table>
+  </div>
 </div>

@@ -1,10 +1,8 @@
 export class Registration {
     regid:any
-    username:any
+    emailid:any
     address:any
     gender:any
     contact:any
-    emailid:any
     password:any
-    interest:any
 }

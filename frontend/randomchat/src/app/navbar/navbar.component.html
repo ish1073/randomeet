@@ -1,5 +1,5 @@
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
+<nav class="navbar navbar-inverse" style="margin:0% 0%" >
+  <div class="container-fluid" style="background-color: #111827; height: 50px; font-size: medium;">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
@@ -12,36 +12,39 @@
       <div class="collapse navbar-collapse" id="myNavbar" *ngSwitchCase="'guest'">
         <ul class="nav navbar-nav">
           <li class="active"><a routerLink="/">Home</a></li>
-          <li><a routerLink="/chat">Chatting template</a></li>
+          <li><a routerLink="/pchat">Chatting template</a></li>
+          <li><a routerLink="/feat">Features</a></li>
           <li><a routerLink="/vfeedback">View Feedbacks</a></li>
           <li><a routerLink="/aboutus">About Us</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li><a routerLink="/register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
           <li><a routerLink="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-          <li><a routerLink="/adminlogin"><span class="glyphicon glyphicon-log-in"></span>Admin Login</a></li>
-
         </ul>
       </div>
       <div class="collapse navbar-collapse" id="myNavbar" *ngSwitchCase="'user'">
         <ul class="nav navbar-nav">
           <li class="active"><a routerLink="/">Home</a></li>
-          <li><a routerLink="/profile">Profiles</a></li>
+          <li><a routerLink="/profiles">Chatting</a></li>
+          <li><a routerLink="/ib">Icebreaker Questions</a></li>
+          <li><a routerLink="/tl">Game</a></li>
+          <li><a routerLink="/event">Events</a></li>
           <li><a routerLink="/feedback">Feedback</a></li>
+          <li><a routerLink="/vnotify">Notifications</a></li>
           <li><a routerLink="/aboutus">About Us</a></li>
-
         </ul>
         <ul class="nav navbar-nav navbar-right">
+          <li><a routerLink="/profile"><span class="glyphicon glyphicon-user"></span>Profile</a></li>
           <li><a (click)="logout()"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
         </ul>
       </div>
       <div class="collapse navbar-collapse" id="myNavbar" *ngSwitchCase="'admin'">
         <ul class="nav navbar-nav">
           <li class="active"><a routerLink="/">Home</a></li>
-          <li><a routerLink="/profile">Profiles</a></li>
-
+          <li><a routerLink="/vprofile">View Profiles</a></li>
           <li><a routerLink="/vfeedback">View Feedbacks</a></li>
           <li><a routerLink="/vregister">View Registers</a></li>
+          <li><a routerLink="/anotify">Add Notifications</a></li>
           <li><a routerLink="/aboutus">About Us</a></li>
 
         </ul>

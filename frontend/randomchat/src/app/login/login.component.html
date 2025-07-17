@@ -1,4 +1,4 @@
-<div class="container">
+<!--<div class="container" style="height: 650px; margin-top: 45px;">
     <h1 class="text-center" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Login here!</h1>
     <form (ngSubmit)="submitdata()">
         <div class="form-group">
@@ -13,4 +13,48 @@
          <a href="/register" class="alert-link">Register Now</a></div>
         <button type="submit" class="btn btn-primary">Submit</button><hr>
     </form>
-</div>
+</div>->
+<!-- Add this inside your main HTML file (e.g., login.component.html) -->
+<video autoplay muted loop id="background-video">
+    <source src="v21.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+<div class="login-container">
+    <div class="form-box">
+      <h1 class="text-center">Login here!</h1>
+      <form (ngSubmit)="submitdata()">
+        <div class="form-group">
+          <label for="emailid">Enter Email Id</label>
+          <input
+            type="email"
+            class="form-control"
+            id="emailid"
+            name="emailid"
+            placeholder="Enter emailid here"
+            [(ngModel)]="reg.emailid"
+          />
+        </div>
+  
+        <div class="form-group">
+          <label for="password">Enter Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            name="password"
+            placeholder="Enter password here"
+            [(ngModel)]="reg.password"
+          />
+        </div>
+  
+        <div class="alert alert-warning mt-3">
+          Not Registered Yet?
+          <a href="/register" class="alert-link">Register Now</a>
+        </div>
+  
+        <button type="submit" class="btn btn-custom">Submit</button>
+        <hr />
+      </form>
+    </div>
+  </div>
+  

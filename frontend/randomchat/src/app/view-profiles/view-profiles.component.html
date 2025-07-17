@@ -1,0 +1,35 @@
+<div class="profile-container" style="height: 1200px; margin-top: 45px;">
+    <h2 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">All User Profiles</h2>
+    <div class="profile-grid">
+        <!--<div *ngFor="let profile of rarr" class="profile-card">
+        <img [src]="profile.avatarUrl || 'assets/default-avatar.png'" alt="Avatar" class="profile-pic">
+        <div class="profile-info">
+          <h3>{{ profile.username }}</h3>
+          <p class="bio">{{ profile.bio }}</p>
+          <p class="interest"><strong>Interest:</strong> {{ profile.interest }}</p>
+        </div>
+      </div>-->
+        <table class="user-table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Email id</th>
+                    <th>Username</th>
+                    <th>Bio</th>
+                    <th>Interest</th>
+                    <th>Theme Colour</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let r of rarr" class="profile-card">
+                    <td>{{r.id}}</td>
+                    <td>{{r.emailid}}</td>
+                    <td>{{r.username}}</td>
+                    <td>{{r.bio}}</td>
+                    <td>{{r.interest}}</td>
+                    <td>{{r.themeColor}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

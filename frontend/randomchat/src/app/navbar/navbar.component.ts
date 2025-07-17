@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
-import { ChatComponent } from '../chat/chat.component';
 import { ChatService } from '../services/chat.service';
 
 @Component({
@@ -12,7 +11,7 @@ import { ChatService } from '../services/chat.service';
 })
 export class NavbarComponent implements OnInit {
   menutype="guest"
-  constructor(private router:Router,private cht:ChatService) {
+  constructor(private router:Router) {
 
   }
   ngOnInit(): void {
